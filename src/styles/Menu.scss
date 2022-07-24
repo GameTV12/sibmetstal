@@ -1,0 +1,238 @@
+$blackColor: #333;
+$whiteColorAbsolute: rgb(255, 255, 255);
+$whiteColor: rgb(246, 246, 246);
+$redColor: rgb(224, 0, 0);
+$aquaColor: #00FFFFFF;
+$currentColor: rgb(20, 243, 0);
+
+@media (min-width: 767.99px) {
+  .navbar-top {
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
+    background-size: 4px 4px;
+    background-color: $blackColor;
+    margin: 0;
+
+    .ul-list {
+      padding: 0.25em 0;
+    }
+
+    li {
+      margin: 0 2em 0 1em;
+      a {
+        color: $whiteColor;
+        font-weight: 500;
+      }
+    }
+  }
+  li {
+      a{
+        text-decoration: none;
+      }
+  }
+
+  .ul-list{
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  .navbar-main{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+
+    .list {
+      .ul-list {
+        justify-content: flex-end;
+        padding-right: 35px;
+        li {
+          display: inline-block;
+          font-size: 1.3rem;
+          transform-origin: 0 100%;
+          transform: skewX(-15deg);
+          overflow: hidden;
+          white-space: nowrap;
+          a {
+            padding: 1em 1.2em;
+            color: $blackColor;
+            display: inline-block;
+            transform: skewX(15deg);
+          }
+           &:hover {
+             background: $aquaColor;
+             a {
+               font-weight: bolder;
+             }
+           }
+
+          &.current-page{
+            background: $currentColor;
+            &:hover{
+              cursor: default !important;
+              a {
+                font-weight: normal !important;
+                cursor: default !important;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
+  }
+
+
+  .navbar-menu {
+    box-shadow: 0 1px 2px gray;
+    margin-bottom: 1.5em;
+  }
+
+
+  .logo {
+    background: url("../images/logo.png") no-repeat 0 center;
+    margin: 0.5em 0 0.5em 0.5em;
+    height: inherit;
+    padding: 0 12%;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  .menu-button {
+    display: none;
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  .navbar-menu {
+    position: fixed;
+    box-shadow: 0 1px 2px gray;
+    margin-bottom: 1.5em;
+    width: 100%;
+    z-index: 50;
+  }
+  .navbar-top {
+    background-image: repeating-linear-gradient(-45deg, rgba(255,255,255, 0.25), rgba(255,255,255, 0.25) 1px, transparent 1px, transparent 6px);
+    background-size: 4px 4px;
+    background-color: $blackColor;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+
+    .ul-list {
+      padding: 0.25em 0;
+      width: 100%;
+    }
+
+    li {
+      margin: 0.15rem 0;
+      a {
+        color: $whiteColor;
+        font-weight: 500;
+      }
+    }
+  }
+  li {
+    a{
+      text-decoration: none;
+    }
+  }
+
+  .ul-list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  .navbar-main{
+    background: $whiteColorAbsolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    width: 100%;
+
+    .list {
+      .ul-list {
+        li {
+          font-size: 1.3rem;
+          text-align: center;
+          white-space: nowrap;
+          width: 100%;
+          cursor: pointer;
+
+          a {
+            padding: 1em 1.2em;
+            color: $blackColor;
+            display: inline-block;
+            width: 100%;
+          }
+          &:hover {
+            background: $aquaColor;
+            a {
+              font-weight: bolder;
+            }
+          }
+
+          &.current-page{
+            background: $currentColor;
+            &:hover{
+              cursor: default !important;
+              a {
+                font-weight: normal !important;
+                cursor: default !important;
+              }
+            }
+
+          }
+
+        }
+      }
+    }
+  }
+
+  .menu-button {
+    width: 30px;
+    height: 30px;
+    margin: auto 20px auto auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 4px;
+      width: 30px;
+      background-color: white;
+      height: 2px;
+    }
+
+    &:after{
+      content: '';
+      position: absolute;
+      top: 24px;
+      width: 30px;
+      background-color: white;
+      height: 2px;
+    }
+
+    span {
+      position: absolute;
+      top: 14px;
+      width: 30px;
+      background-color: white;
+      height: 2px;
+    }
+  }
+
+  .navbar-pos{
+    padding-bottom: 5.1rem;
+  }
+}
